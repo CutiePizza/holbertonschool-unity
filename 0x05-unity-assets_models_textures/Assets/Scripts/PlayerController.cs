@@ -1,137 +1,79 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 { 
-   /* private CharacterController _controller;
-    // this way only our script can access it
+    private CharacterController controller;
     [SerializeField]
-    private float _moveSpeed = 5f;
+    private float speed = 6;
     [SerializeField]
-    private float _doubleJumpMultiplier = 0.5f;
-    private float _gravity = 9.81f;
-    private float _jumpSpeed = 10f;
-    private float _directionY;
-    private bool _canDoubleJump = false;
-    
-    void Start()
-    {
-        _controller = GetComponent<CharacterController>();
-    }
+    private float gravity = -9.81f;
+    [SerializeField]
+    private float jumpHeight = 3;
 
-    void Update()
-    {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        // Intializing a direction value
-        Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
-        
-        if (_controller.isGrounded && Input.GetButtonDown("Jump"))
-        {
-            direction.y = _jumpSpeed;    
-        }
-
-        direction.y -= _gravity * Time.deltaTime;
-
-        _controller.Move(direction * _moveSpeed * Time.deltaTime);   
-    }
-    */
-    
-    
-    
-    
-    
-    
-  /*  public float speed = 6f;
-    public CharacterController controller;
-    public Transform cam;
-    
-    public float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
-    public float jumpHeight = 7f;
-    public float maxJumps = 2f;
-    public bool isGrounded;
-    public float numberJumps = 0f;
-    //private float _gravity = 9.81f;
-
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        // between -1 and 1
-       // -1 if A key pressed or left arrow
-       // 1 if D key or right arrow
-       float horizontal = Input.GetAxisRaw("Horizontal");
-       // -1 S or down key
-       //1 if W or Up key
-       float vertical = Input.GetAxisRaw("Vertical");
-       Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-       if (direction.magnitude >= 0.1f)
-       {
-          float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-          float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-          transform.rotation = Quaternion.Euler(0f, angle, 0f);
-          Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-          controller.Move(moveDir.normalized * speed * Time.deltaTime);
-       }
-       if (numberJumps > maxJumps - 1)
-        {
-            isGrounded = false;
-        }
-
-        if (isGrounded)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                direction.y = jumpHeight;
-                numberJumps += 1;
-            }
-        }
-    }
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        isGrounded = true;
-        numberJumps = 0;
-        Debug.Log("HHAHAHA");
-    }*/
-
-
-
-    public CharacterController controller;
-    public Transform cam;
-
-    public float speed = 6;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3;
+    [SerializeField]
+    public Transform player;
+    [SerializeField]
+    public Transform respawnPoint;
+    private bool isDead = false;
     Vector3 velocity;
     bool isGrounded;
-
+    public Transform cam;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
+    private float numberJumps = 0;
+    private float MaxJumps = 1;
+
+    void Start()
+    {
+        controller = GetComponent<CharacterController>();
+        player.transform.position = new Vector3(0, 1.25f, 0);
+    }
 
     // Update is called once per frame
     void Update()
     {
+        
         //jump
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (isGrounded && velocity.y < 0)
+       /* if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
-        }
+        }*/
+        if (isGrounded)
+            numberJumps = 0;
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (isGrounded || numberJumps < MaxJumps)
+        {
+        if (Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            numberJumps++;
+        }
         }
         
+        if (player.transform.position.y < -10)
+        {
+            isDead = true;
+        }
         
-        
+            
+        if (isDead)
+        {
+            StartCoroutine(LoadScene(1));
+        }
+         
+    }
+     IEnumerator LoadScene(float seconds)
+    {
+       yield return new WaitForSeconds(seconds);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void FixedUpdate()
@@ -150,7 +92,7 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
-        //gravity
+       //gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
