@@ -38,6 +38,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -772,4 +774,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/Level01.unity
-  playerPath: C:/Users/inesc/Desktop/cedissier/0x05-unity-assets_models_textures.exe
+  playerPath: C:/Users/inesc/Documents/Builds/Platformer.exe
