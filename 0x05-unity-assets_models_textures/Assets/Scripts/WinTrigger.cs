@@ -26,6 +26,5 @@ public class WinTrigger : MonoBehaviour
             timer.enabled = false;
             timer.timerText.color = Color.green;
             timer.timerText.fontSize = 80;
-
     }
 }
