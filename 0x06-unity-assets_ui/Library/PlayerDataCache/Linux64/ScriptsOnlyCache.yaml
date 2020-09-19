@@ -774,4 +774,4 @@ ScriptsOnlyBuild:
   platform: 24
   scenePathNames:
   - Assets/Scenes/Level01.unity
-  playerPath: C:/Users/inesc/Documents/Builds/Linux/Platformer.x86_64
+  playerPath: C:/Users/inesc/Desktop/ok.x86_64
