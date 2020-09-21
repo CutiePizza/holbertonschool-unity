@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerPrefs.SetString("SceneNumber", SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame
@@ -18,14 +18,20 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void LevelOne()
+    public void LevelSelect(int level)
     {
-        StartCoroutine(LoadScene(1));
+        SceneManager.LoadScene(level);
     }
 
-    IEnumerator LoadScene(float seconds)
+    public void Options()
     {
-       yield return new WaitForSeconds(seconds);
-       SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Options");
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Exited");
+    }
+       
 }

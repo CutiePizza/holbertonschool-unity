@@ -196,7 +196,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3255983002099567161}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9203394806510340749}
+        m_MethodName: LevelSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3255983002298719396
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +408,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3255983002310213231}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9203394806510340749}
+        m_MethodName: Options
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3255983002511138815
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +542,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3255983002511138808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9203394806510340749}
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3255983002606191143
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +566,7 @@ GameObject:
   - component: {fileID: 3255983002606191136}
   - component: {fileID: 3255983002606191137}
   - component: {fileID: 3255983002606191142}
+  - component: {fileID: 9203394806510340749}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -626,6 +660,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9203394806510340749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255983002606191143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74aec45b21281a944b95b2818a7a8cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3255983002707499939
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +870,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3255983002784947210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9203394806510340749}
+        m_MethodName: LevelSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3255983002872190611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1081,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3255983002892390309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9203394806510340749}
+        m_MethodName: LevelSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3255983003098546974
 GameObject:
   m_ObjectHideFlags: 0

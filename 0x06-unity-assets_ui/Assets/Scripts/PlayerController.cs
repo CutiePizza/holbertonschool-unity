@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         player.transform.position = new Vector3(0, 1.25f, 0);
+        PlayerPrefs.SetString("SceneNumber", SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame
