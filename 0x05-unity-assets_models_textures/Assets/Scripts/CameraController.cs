@@ -6,13 +6,13 @@ public class CameraController : MonoBehaviour
 {   
     public Transform player;
     public Transform lookTarget;
-    public float speed = 10.0f;
+    public float speed = 3.0f;
     private Vector3 offset = new Vector3(0, 1.5f, -6.25f);
 
     //Rotate
     public bool rotateAroundPlayer = true;
 
-    public float rotationSpeed = 5.0f;
+    public float rotationSpeed = 3.0f;
     // Update is called once per frame
 
 

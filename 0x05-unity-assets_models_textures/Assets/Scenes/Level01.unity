@@ -5257,9 +5257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3377876498180243176}
   lookTarget: {fileID: 3377876498180243176}
-  speed: 10
+  speed: 3
   rotateAroundPlayer: 1
-  rotationSpeed: 5
+  rotationSpeed: 3
 --- !u!1001 &477684337
 PrefabInstance:
   m_ObjectHideFlags: 0
