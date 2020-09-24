@@ -354,8 +354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9203394806510340749, guid: f6f4b6bbf016c1043a265f01dc80b1b2,
-          type: 3}
+      - m_Target: {fileID: 451237179}
         m_MethodName: LevelSelect
         m_Mode: 3
         m_Arguments:
@@ -488,8 +487,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9203394806510340749, guid: f6f4b6bbf016c1043a265f01dc80b1b2,
-          type: 3}
+      - m_Target: {fileID: 451237179}
         m_MethodName: LevelSelect
         m_Mode: 3
         m_Arguments:
@@ -499,7 +497,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &424518555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,6 +809,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 451237178}
     m_Modifications:
+    - target: {fileID: 7450529299164590762, guid: 4b2be3ba49db7ee4ca0d99443ed5e582,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450529299164590762, guid: 4b2be3ba49db7ee4ca0d99443ed5e582,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450529299164590762, guid: 4b2be3ba49db7ee4ca0d99443ed5e582,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450529299164590762, guid: 4b2be3ba49db7ee4ca0d99443ed5e582,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451237179}
+    - target: {fileID: 7450529299164590762, guid: 4b2be3ba49db7ee4ca0d99443ed5e582,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450529299164590762, guid: 4b2be3ba49db7ee4ca0d99443ed5e582,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7450529299164590764, guid: 4b2be3ba49db7ee4ca0d99443ed5e582,
         type: 3}
       propertyPath: m_Name
@@ -1183,8 +1211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9203394806510340749, guid: f6f4b6bbf016c1043a265f01dc80b1b2,
-          type: 3}
+      - m_Target: {fileID: 451237179}
         m_MethodName: LevelSelect
         m_Mode: 3
         m_Arguments:
@@ -1349,6 +1376,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OptionsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 32519287529070821, guid: c7342d2c681be8940801495f41d819ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451237179}
+    - target: {fileID: 32519287529070821, guid: c7342d2c681be8940801495f41d819ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Options
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7342d2c681be8940801495f41d819ed, type: 3}
