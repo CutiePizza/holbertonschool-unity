@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TimerTrigger : MonoBehaviour
 {
+    public bool isTrigger;
     // Start is called before the first frame update
     void Start()
     {
-        
+        isTrigger = false;
     }
 
     // Update is called once per frame
@@ -20,5 +21,6 @@ public class TimerTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
             other.GetComponent<Timer>().enabled = true;
+            isTrigger = true;
     }
 }

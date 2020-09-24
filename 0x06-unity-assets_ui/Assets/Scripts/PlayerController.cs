@@ -28,18 +28,24 @@ public class PlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float numberJumps = 0;
     private float MaxJumps = 1;
+    
+    bool ifPaused;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         player.transform.position = new Vector3(0, 1.25f, 0);
         PlayerPrefs.SetString("SceneNumber", SceneManager.GetActiveScene().name);
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ifPaused = this.GetComponent<PauseMenu>().isPaused;
+        if (ifPaused == false)
+        {
         //jump
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -69,6 +75,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(LoadScene(1));
         }
+        }
          
     }
      IEnumerator LoadScene(float seconds)
@@ -79,6 +86,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (ifPaused == false)
+        {
             //walk
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -96,6 +105,7 @@ public class PlayerController : MonoBehaviour
        //gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        }
     }
 }
 

@@ -7,6 +7,7 @@ public class WinTrigger : MonoBehaviour
 {
     Timer timer;
     GameObject player;
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -323,7 +323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8509422074252276559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5904342119469108539, guid: c96baac9b39aaea43af481ca35433121,
+          type: 3}
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8509422074260481154
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +841,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8509422075385114302}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5904342119469108539, guid: c96baac9b39aaea43af481ca35433121,
+          type: 3}
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8509422075632253215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionsButton
       objectReference: {fileID: 0}
+    - target: {fileID: 32519287529070821, guid: c7342d2c681be8940801495f41d819ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8509422075632253215}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7342d2c681be8940801495f41d819ed, type: 3}
 --- !u!224 &8530946154224476304 stripped
