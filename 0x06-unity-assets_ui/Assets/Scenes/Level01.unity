@@ -19715,6 +19715,32 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8509422075181458228, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_Text
+      value: PAUSED
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509422075181458228, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: a6b18bfd72515b54aad809151009507c,
+        type: 3}
+    - target: {fileID: 8509422075181458228, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509422075181458228, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509422075181458228, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8509422075385114303, guid: 386f46d504d552048b321679eb99bb8a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
