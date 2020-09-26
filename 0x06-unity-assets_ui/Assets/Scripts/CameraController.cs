@@ -12,6 +12,9 @@ public class CameraController : MonoBehaviour
     //Rotate
     public bool rotateAroundPlayer = true;
 
+    public bool rotateAbovePlayer = true;
+
+    public bool isInverted;
     public float rotationSpeed = 3.0f;
     // Update is called once per frame
 
@@ -29,9 +32,18 @@ public class CameraController : MonoBehaviour
         if (rotateAroundPlayer && Input.GetMouseButton(1))
         {
             Quaternion camTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
-            offset = camTurnAngle * offset;
-            
-            
+            offset = camTurnAngle * offset;    
+        }
+
+        if (rotateAbovePlayer && Input.GetMouseButton(1))
+        {   
+            Vector3 vector;
+            if (isInverted == false)
+                vector = Vector3.left;
+            else
+                vector = Vector3.right;
+            Quaternion camTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationSpeed, vector);
+            offset = camTurnAngle * offset;    
         }
     }
 }

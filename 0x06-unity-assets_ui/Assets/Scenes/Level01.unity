@@ -5153,6 +5153,8 @@ MonoBehaviour:
   lookTarget: {fileID: 3377876498180243176}
   speed: 3
   rotateAroundPlayer: 1
+  rotateAbovePlayer: 1
+  isInverted: 0
   rotationSpeed: 3
 --- !u!1001 &477684337
 PrefabInstance:
@@ -19715,6 +19717,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8509422074260481157, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -133564.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509422074260481157, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509422074260481157, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -70350
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509422074260481157, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 8509422075181458228, guid: 386f46d504d552048b321679eb99bb8a,
         type: 3}
       propertyPath: m_Text
@@ -19740,6 +19762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509422075181458228, guid: 386f46d504d552048b321679eb99bb8a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8509422075385114303, guid: 386f46d504d552048b321679eb99bb8a,
         type: 3}
