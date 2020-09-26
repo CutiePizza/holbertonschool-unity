@@ -16,7 +16,20 @@ public class CameraController : MonoBehaviour
 
     public bool isInverted;
     public float rotationSpeed = 3.0f;
-    // Update is called once per frame
+
+    int inverted;
+    
+
+    void Update()
+    {
+        inverted = PlayerPrefs.GetInt("invertedY");
+        if (inverted == 1)
+        {
+            isInverted = true;
+        }
+        else
+            isInverted = false;
+    }
 
 
     void FixedUpdate()
