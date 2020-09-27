@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text timerText;
+    public Text finalText;
     private float msecondsCount;
     private float secondsCount;
     private int minuteCount;
@@ -41,4 +42,20 @@ public class Timer : MonoBehaviour
              secondsCount = 0;
          }    
 }
+
+public void Win()
+{
+    timerText.enabled = false;
+    if (secondsCount < 10)
+        finalText.text = minuteCount + ":0" + (int)secondsCount + "." + (int)msecondsCount;
+    else
+        finalText.text = minuteCount + ":" + (int)secondsCount + "." + (int)msecondsCount;
+}
+
+void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Win")
+            Win();
+            
+    }
 }

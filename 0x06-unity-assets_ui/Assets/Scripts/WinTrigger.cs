@@ -7,6 +7,7 @@ public class WinTrigger : MonoBehaviour
 {
     Timer timer;
     GameObject player;
+    public Canvas WinMenu;
     
     // Start is called before the first frame update
     void Start()
@@ -27,5 +28,6 @@ public class WinTrigger : MonoBehaviour
             timer.enabled = false;
             timer.timerText.color = Color.green;
             timer.timerText.fontSize = 80;
+            WinMenu.gameObject.SetActive(true);
     }
 }
