@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5db6be77f6b3a74fa1655c822534075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 7
   gravity: -9.81
   jumpHeight: 1
   player: {fileID: 6503691306224869629}
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
+  finalText: {fileID: 0}
 --- !u!143 &8404104000110590906
 CharacterController:
   m_ObjectHideFlags: 0
@@ -183,6 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: {fileID: 0}
+  butt: {fileID: 0}
+  isPaused: 0
 --- !u!1 &8404104001095207450
 GameObject:
   m_ObjectHideFlags: 0
