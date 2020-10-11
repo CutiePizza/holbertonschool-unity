@@ -30,13 +30,12 @@ public class PlayerController : MonoBehaviour
     private float MaxJumps = 1;
     
     bool ifPaused;
-
+    public Animator anim;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         player.transform.position = new Vector3(0, 1.25f, 0);
         PlayerPrefs.SetString("SceneNumber", SceneManager.GetActiveScene().name);
-        
         
     }
 
@@ -62,6 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             numberJumps++;
+            anim.SetTrigger("isjumping");
         }
         }
         
@@ -75,8 +75,8 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(LoadScene(1));
         }
-        }
-         
+        
+    }
     }
      IEnumerator LoadScene(float seconds)
     {
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
+        
         if(direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -101,7 +101,9 @@ public class PlayerController : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            anim.SetTrigger("isrunning");
         }
+    
        //gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
