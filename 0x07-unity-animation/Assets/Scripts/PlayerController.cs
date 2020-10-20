@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public Transform player;
     [SerializeField]
     public Transform respawnPoint;
-    private bool isDead = false;
+    //private bool isDead = false;
     Vector3 velocity;
     bool isGrounded;
     public Transform cam;
@@ -31,12 +32,14 @@ public class PlayerController : MonoBehaviour
     
     bool ifPaused;
     public Animator anim;
+
+    Timer timer;
+    Text timerTex;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         player.transform.position = new Vector3(0, 1.25f, 0);
-        PlayerPrefs.SetString("SceneNumber", SceneManager.GetActiveScene().name);
-        
+        PlayerPrefs.SetString("SceneNumber", SceneManager.GetActiveScene().name);   
     }
 
     // Update is called once per frame
@@ -61,27 +64,26 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             numberJumps++;
+            if (isGrounded)
             anim.SetTrigger("isjumping");
         }
         }
-        
-        if (player.transform.position.y < -10)
+        if (isGrounded)
         {
-            isDead = true;
+            if (Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("s") || Input.GetKey("down") || Input.GetKey("d") || Input.GetKey("right") || Input.GetKey("a") || Input.GetKey("left"))
+                anim.SetBool("isRunning", true);
+            else
+                anim.SetBool("isRunning", false);
         }
+         
         
-            
-        if (isDead)
-        {
-            StartCoroutine(LoadScene(1));
-        }
         
     }
     }
      IEnumerator LoadScene(float seconds)
     {
        yield return new WaitForSeconds(seconds);
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       controller.Move(velocity * Time.deltaTime);
     }
 
     void FixedUpdate()
@@ -101,12 +103,19 @@ public class PlayerController : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
-            anim.SetTrigger("isrunning");
+            
         }
-    
+        //anim.SetTrigger("isIdle");
        //gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        if (player.transform.position.y < -10)
+        {
+            player.transform.position = new Vector3(0, 30f, 0);
+            timer = player.GetComponent<Timer>();
+            timer.timerText.text = "0:00.00";
+            timer.enabled = false;
+        }   
         }
     }
 }
