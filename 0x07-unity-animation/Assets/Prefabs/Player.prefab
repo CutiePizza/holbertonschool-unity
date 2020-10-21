@@ -139,6 +139,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   turnSmoothTime: 0.1
+  anim: {fileID: 0}
 --- !u!114 &8404104000110590881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,13 +262,12 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 3bccb4f086cca0d41888f73c1263d246,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Boy:Hips'\n\tTransform 'Boy:LeftArm'\n\tTransform
-        'Boy:RightHandRing1'\n\tTransform 'Boy:RightHandThumb1'\n\tTransform 'Boy:LeftHandRing2'\n\tTransform
-        'Boy:Head'\n\tTransform 'Boy:LeftHandPinky2'\n\tTransform 'Boy:RightHandIndex2'\n\tTransform
-        'Boy:RightArm'\n\tTransform 'Boy:LeftHandIndex3'\n\tand more ...\n\tFrom
-        animation clip 'Happy Idle'"
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 3bccb4f086cca0d41888f73c1263d246,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bccb4f086cca0d41888f73c1263d246, type: 3}

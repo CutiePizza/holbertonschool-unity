@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float numberJumps = 0;
     private float MaxJumps = 1;
-    
+    private bool isAnime = false;
     bool ifPaused;
     public Animator anim;
 
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
             numberJumps++;
             if (isGrounded)
-            anim.SetTrigger("isjumping");
+                anim.SetTrigger("isjumping");
         }
         }
         if (isGrounded)
@@ -74,10 +74,16 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isRunning", true);
             else
                 anim.SetBool("isRunning", false);
+        }  
+        if (!isGrounded && velocity.y < -10)
+        {
+            anim.SetBool("isFalling", true);
+            
         }
-         
-        
-        
+        else
+        {
+                anim.SetBool("isFalling", false);
+        }
     }
     }
      IEnumerator LoadScene(float seconds)
@@ -88,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (ifPaused == false)
+        if (ifPaused == false && isAnime == false)
         {
             //walk
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -105,17 +111,19 @@ public class PlayerController : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
             
         }
-        //anim.SetTrigger("isIdle");
+        
        //gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
         if (player.transform.position.y < -10)
         {
             player.transform.position = new Vector3(0, 30f, 0);
+            //player.transform.rotation = new Quaternion(0.068f, -0.002f, -0.013f, 0);
             timer = player.GetComponent<Timer>();
             timer.timerText.text = "0:00.00";
             timer.enabled = false;
-        }   
+            
+        }
         }
     }
 }
