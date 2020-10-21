@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetTrigger("isjumping");
         }
         }
-        if (isGrounded)
+        if (isGrounded && isAnime == false)
         {
             if (Input.GetKey("w") || Input.GetKey("up") || Input.GetKey("s") || Input.GetKey("down") || Input.GetKey("d") || Input.GetKey("right") || Input.GetKey("a") || Input.GetKey("left"))
                 anim.SetBool("isRunning", true);
@@ -78,12 +78,16 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded && velocity.y < -10)
         {
             anim.SetBool("isFalling", true);
-            
         }
         else
         {
                 anim.SetBool("isFalling", false);
+                
         }
+        /*if (anim.GetCurrentAnimatorStateInfo(0).IsName("Getting Up"))
+        {
+            isAnime = false;
+        }*/
     }
     }
      IEnumerator LoadScene(float seconds)
@@ -108,8 +112,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
-            
+            controller.Move(moveDir.normalized * speed * Time.deltaTime);   
         }
         
        //gravity
@@ -118,11 +121,9 @@ public class PlayerController : MonoBehaviour
         if (player.transform.position.y < -10)
         {
             player.transform.position = new Vector3(0, 30f, 0);
-            //player.transform.rotation = new Quaternion(0.068f, -0.002f, -0.013f, 0);
             timer = player.GetComponent<Timer>();
             timer.timerText.text = "0:00.00";
             timer.enabled = false;
-            
         }
         }
     }
