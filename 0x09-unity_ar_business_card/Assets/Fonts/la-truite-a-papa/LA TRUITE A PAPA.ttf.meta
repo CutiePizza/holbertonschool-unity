@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a6ef68b59c0ddb740ab811150d04bbcd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: LA TRUITE A PAPA
+  fontNames:
+  - LA TRUITE A PAPA
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c2020aae2ad898942b347f82b2c02ca2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
