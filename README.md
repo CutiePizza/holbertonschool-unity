@@ -1,6 +1,6 @@
 # Unity projects
 
-![logo](https://fr.wikipedia.org/wiki/Unity_(moteur_de_jeu)#/media/Fichier:Unity_Technologies_logo.svg)
+![logo](https://www.exoa.fr/wp-content/uploads/2015/09/blog_thumb_unity-710x270.jpg)
 
 # TABLE OF CONTENTS
 ___
